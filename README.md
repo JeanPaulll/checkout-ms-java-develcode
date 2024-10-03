@@ -15,13 +15,13 @@ Tecnologias Utilizadas
 - RestTemplate (para comunicação entre microsserviços)
 - Docker
 
-Configuração do Banco de Dados (PostgreSQL via Docker Compose)
+## Configuração do Banco de Dados (PostgreSQL via Docker Compose)
 
 Este projeto utiliza PostgreSQL como banco de dados relacional, configurado e executado através do Docker Compose. A configuração do banco de dados já está definida no arquivo docker-compose.yml para facilitar a criação e inicialização do banco.
 
-Passos para Configuração e Execução do Banco de Dados:
+## Passos para Configuração e Execução do Banco de Dados:
+Subir o Banco de Dados com Docker Compose:
 
-### Subir o Banco de Dados com Docker Compose:
 Para iniciar o banco de dados PostgreSQL, navegue até o diretório onde o arquivo docker-compose.yml está localizado e execute o seguinte comando:
 
 	docker-compose up -d
@@ -29,7 +29,7 @@ Para iniciar o banco de dados PostgreSQL, navegue até o diretório onde o arqui
 - O serviço do banco de dados estará disponível na porta 5432.
 - A base de dados será criada com o nome checkout_ms_java, e o usuário e senha serão ambos postgres.
 
-### Configuração de Conexão no application.properties:
+## Configuração de Conexão no application.properties:
 No arquivo src/main/resources/application.properties, certifique-se de que a configuração do banco de dados esteja apontando corretamente para o serviço PostgreSQL:
 
 Com essa configuração, o banco de dados estará preparado para receber conexões do microsserviço de Checkout.
@@ -131,8 +131,7 @@ Utilize o Maven para iniciar a aplicação:
 ]
 ```
 
-
-Integração com o Payment Gateway
+## Integração com o Payment Gateway
 
 Este microsserviço se comunica com o Payment Gateway, desenvolvido em Node.js utilizando o framework NestJS, para processar pagamentos. Ao criar um pedido, este serviço realiza uma requisição ao serviço de pagamento para confirmar se o pagamento foi bem-sucedido. Caso o pagamento falhe, o pedido é automaticamente marcado como FALHA_ROLLBACK.
 
