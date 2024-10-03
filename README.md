@@ -1,10 +1,9 @@
-Checkout Service (Java - Spring Boot)
-
-Descrição
+# Checkout Service (Java - Spring Boot)
 
 Este projeto foi desenvolvido como parte de um teste técnico para uma vaga de desenvolvedor na DevelCode. Ele implementa um microsserviço de Checkout utilizando Java e Spring Boot, responsável por gerenciar o processo de criação e consulta de pedidos de compra, com operações CRUD completas. Além disso, ele se integra com outro microsserviço de Gateway de Pagamento, desenvolvido em Node.js utilizando NestJS, que processa os pagamentos dos pedidos.
 
 Para mais detalhes sobre o serviço de pagamento, visite o repositório relacionado: Payment Gateway (Node.js - NestJS).
+- https://github.com/JeanPaulll/payment-gateway-nestjs-develcode
 
 Tecnologias Utilizadas
 
@@ -22,14 +21,13 @@ Este projeto utiliza PostgreSQL como banco de dados relacional, configurado e ex
 
 Passos para Configuração e Execução do Banco de Dados:
 
-	Subir o Banco de Dados com Docker Compose:
+### Subir o Banco de Dados com Docker Compose:
 Para iniciar o banco de dados PostgreSQL, navegue até o diretório onde o arquivo docker-compose.yml está localizado e execute o seguinte comando:
 
-docker-compose up -d
+	docker-compose up -d
 
 - O serviço do banco de dados estará disponível na porta 5432.
 - A base de dados será criada com o nome checkout_ms_java, e o usuário e senha serão ambos postgres.
-
 
 ### Configuração de Conexão no application.properties:
 No arquivo src/main/resources/application.properties, certifique-se de que a configuração do banco de dados esteja apontando corretamente para o serviço PostgreSQL:
@@ -45,38 +43,38 @@ Requisitos
 - Git
 - Docker e Docker Compose
 
-Passos para Configurar e Executar
+## Passos para Configurar e Executar
 
 ### 1.	Clone o Repositório:
 
-git clone https://github.com/JeanPaulll/checkout-ms-java-develcode
+    git clone https://github.com/JeanPaulll/checkout-ms-java-develcode
 
 
 ### 2.	Navegue para o Diretório do Projeto:
 
-cd checkout-ms-java
+    cd checkout-ms-java-develcode
 
 
 ### 3.	Suba o Banco de Dados PostgreSQL com Docker Compose:
 
-docker-compose up -d
+    docker-compose up -d
 
 
 ### 4.	Instale as Dependências:
 Certifique-se de que as dependências do projeto estão corretamente instaladas com o Maven:
 
-mvn clean && mvn dependency:purge-local-repository && mvn install && mvn package
+    mvn clean && mvn dependency:purge-local-repository && mvn install && mvn package
 
 ### 5.	Execute o Microsserviço:
 Utilize o Maven para iniciar a aplicação:
 
-mvn spring-boot:run
+    mvn spring-boot:run
 
 ### 6.	Acesse a aplicação em: http://localhost:8080
 
-Documentação da API
+## Documentação da API
 
-## Endpoints Principais:
+### Endpoints Principais:
 
   - Criar Pedido (POST /orders)
   - Descrição: Cria um novo pedido de compra.
@@ -89,7 +87,7 @@ Documentação da API
   }
 ```
 
-## Resposta:
+### Resposta:
 ```
     {
         "id": 1,
