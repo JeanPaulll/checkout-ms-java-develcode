@@ -1,6 +1,6 @@
 # Checkout Service (Java - Spring Boot)
 
-Este projeto foi desenvolvido como parte de um teste técnico para uma vaga de desenvolvedor na DevelCode. (https://www.develcode.com.br/) Ele implementa um microsserviço de Checkout utilizando Java e Spring Boot, responsável por gerenciar o processo de criação e consulta de pedidos de compra, com operações CRUD completas. Além disso, ele se integra com outro microsserviço de Gateway de Pagamento, desenvolvido em Node.js utilizando NestJS, que processa os pagamentos dos pedidos.
+Este projeto foi desenvolvido como parte de um teste técnico para uma vaga de desenvolvedor na [DevelCode](https://www.develcode.com.br/). Ele implementa um microsserviço de Checkout utilizando Java e Spring Boot, responsável por gerenciar o processo de criação e consulta de pedidos de compra, com operações CRUD completas. Além disso, ele se integra com outro microsserviço de Gateway de Pagamento, desenvolvido em Node.js utilizando NestJS, que processa os pagamentos dos pedidos.
 
 Para mais detalhes sobre o serviço de pagamento, visite o repositório relacionado: Payment Gateway (Node.js - NestJS).
 - https://github.com/JeanPaulll/payment-gateway-nestjs-develcode
@@ -131,6 +131,15 @@ Utilize o Maven para iniciar a aplicação:
 ]
 ```
 
+### Status
+
+|Name|Value|
+|---|---|
+|» status|CRIADO|
+|» status|PAGO|
+|» status|FALHA_ROLLBACK|
+|» status|CANCELADO|
+
 ## Integração com o Payment Gateway
 
 Este microsserviço se comunica com o Payment Gateway, desenvolvido em Node.js utilizando o framework NestJS, para processar pagamentos. Ao criar um pedido, este serviço realiza uma requisição ao serviço de pagamento para confirmar se o pagamento foi bem-sucedido. Caso o pagamento falhe, o pedido é automaticamente marcado como FALHA_ROLLBACK.
@@ -153,4 +162,5 @@ Contato
 - LinkedIn: https://www.linkedin.com/in/jeanpaull/
 - Email: jeanpaulwebb@gmail.com
 
-Esse README foi atualizado para refletir as configurações de PostgreSQL via Docker Compose, removendo as referências ao H2 e garantindo uma explicação completa sobre como subir o banco e executar o projeto. Se precisar de mais alguma modificação, é só avisar! :) 
+Esse README foi atualizado para refletir as configurações de PostgreSQL via Docker Compose, removendo as referências ao H2 e garantindo uma explicação completa sobre como subir o banco e executar o projeto. Se precisar de mais alguma modificação, é só avisar! :)
+
