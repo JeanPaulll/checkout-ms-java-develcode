@@ -1,6 +1,6 @@
 # Checkout Service (Java - Spring Boot)
 
-Este projeto foi desenvolvido como parte de um teste técnico para uma vaga de desenvolvedor na DevelCode. Ele implementa um microsserviço de Checkout utilizando Java e Spring Boot, responsável por gerenciar o processo de criação e consulta de pedidos de compra, com operações CRUD completas. Além disso, ele se integra com outro microsserviço de Gateway de Pagamento, desenvolvido em Node.js utilizando NestJS, que processa os pagamentos dos pedidos.
+Este projeto foi desenvolvido como parte de um teste técnico para uma vaga de desenvolvedor na DevelCode. (https://www.develcode.com.br/) Ele implementa um microsserviço de Checkout utilizando Java e Spring Boot, responsável por gerenciar o processo de criação e consulta de pedidos de compra, com operações CRUD completas. Além disso, ele se integra com outro microsserviço de Gateway de Pagamento, desenvolvido em Node.js utilizando NestJS, que processa os pagamentos dos pedidos.
 
 Para mais detalhes sobre o serviço de pagamento, visite o repositório relacionado: Payment Gateway (Node.js - NestJS).
 - https://github.com/JeanPaulll/payment-gateway-nestjs-develcode
