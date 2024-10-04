@@ -106,7 +106,7 @@ Utilize o Maven para iniciar a aplicação:
     "id": 2,
     "name": "Conjunto de roupas infantis de alta qualidade.",
     "value": 150.00,
-    "status": "FALHA_ROLLBACK"
+    "status": "FALHA"
 }
 ```
 
@@ -120,7 +120,7 @@ Utilize o Maven para iniciar a aplicação:
         "id": 1,
         "name": "Conjunto de roupas infantis de alta qualidade.",
         "value": 150.00,
-        "status": "FALHA_ROLLBACK"
+        "status": "FALHA"
     },
     {
         "id": 2,
@@ -137,12 +137,12 @@ Utilize o Maven para iniciar a aplicação:
 |---|---|
 |» status|CRIADO|
 |» status|PAGO|
-|» status|FALHA_ROLLBACK|
+|» status|FALHA|
 |» status|CANCELADO|
 
 ## Integração com o Payment Gateway
 
-Este microsserviço se comunica com o Payment Gateway, desenvolvido em Node.js utilizando o framework NestJS, para processar pagamentos. Ao criar um pedido, este serviço realiza uma requisição ao serviço de pagamento para confirmar se o pagamento foi bem-sucedido. Caso o pagamento falhe, o pedido é automaticamente marcado como FALHA_ROLLBACK.
+Este microsserviço se comunica com o Payment Gateway, desenvolvido em Node.js utilizando o framework NestJS, para processar pagamentos. Ao criar um pedido, este serviço realiza uma requisição ao serviço de pagamento para confirmar se o pagamento foi bem-sucedido. Caso o pagamento falhe, o pedido é automaticamente marcado como FALHA.
 
 Link para o Microsserviço de Pagamento (payment-gateway-nodejs-develcode):
 

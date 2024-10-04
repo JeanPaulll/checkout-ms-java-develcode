@@ -18,4 +18,5 @@ import java.io.Serializable;
 public class PaymentResponseModel implements Serializable {
     private boolean success;
     private String message;
+    private String status;
 }

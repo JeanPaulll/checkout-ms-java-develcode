@@ -32,24 +32,26 @@ public class OrderService {
         order.setStatus("CRIADO");
         OrderModel savedOrder = orderRepository.save(order);
         PaymentResponseModel paymentResponse = processPayment(savedOrder);
-        if (paymentResponse.isSuccess()) {
+        if ("SUCESSO".equals(paymentResponse.getStatus())) {
             savedOrder.setStatus("PAGO");
         } else {
-            savedOrder.setStatus("FALHA_ROLLBACK");
+            savedOrder.setStatus("FALHA");
         }
         return orderRepository.save(savedOrder);
     }
 
     /**
-     * @param order
-     * @return
      * @description Criar o payload para o serviço de pagamento e envia requisição POST para o payment_gateway
      */
     private PaymentResponseModel processPayment(OrderModel order) {
-        PaymentRequestModel paymentRequest = PaymentRequestModel.builder().orderId(order.getId()).build();
+       PaymentRequestModel paymentRequest = PaymentRequestModel.builder().orderId(order.getId()).build();
         try {
             PaymentResponseModel response = restTemplate.postForObject(PAYMENT_GATEWAY_URL, paymentRequest, PaymentResponseModel.class);
-            return response != null ? response : PaymentResponseModel.builder().success(false).message("Nenhuma resposta!").build();
+            return response != null
+                    ? response
+                    : PaymentResponseModel.builder()
+                    .message("Nenhuma resposta!")
+                    .build();
         } catch (Exception e) {
             return PaymentResponseModel.builder().success(false).message(e.getMessage()).build();
         }

@@ -24,5 +24,5 @@ public class OrderModel {
     private Long id;
     private String name;
     private BigDecimal value;
-    private String status; // CRIADO, PAGO, FALHA_ROLLBACK, CANCELADO
+    private String status; // CRIADO, PAGO, FALHA, CANCELADO
 }
